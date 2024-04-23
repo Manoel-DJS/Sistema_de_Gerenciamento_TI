@@ -6,6 +6,7 @@ import java.util.*;
 
 public class Sistema_TI {
     private static Scanner input = new Scanner(System.in);
+    private static Scanner inputDel = new Scanner(System.in);
     private static ArrayList<Chamado> chamados;
     private static Map <Chamado, Integer> carrinhos;
 
@@ -13,6 +14,7 @@ public class Sistema_TI {
         chamados = new ArrayList<>();
         carrinhos = new HashMap<>();
 
+        inputDel.useDelimiter("//");
         menuServico();
 
     }
@@ -55,13 +57,15 @@ public class Sistema_TI {
     }
     // oto metodo
     private static void cadastrarChamada(){
+
         System.out.println("Digite o serviço que deseja: ");
-        String nomeChamada = input.next();
+        String FRASE = inputDel.next();
+        // String nomeChamada = input.next();
 
         System.out.println("Digite o nível de Urgencia da chamada/ordem de serviço: ");
         String nivelUrgencia = input.next();
 
-        Chamado novoChamado = new Chamado(nomeChamada, nivelUrgencia);
+        Chamado novoChamado = new Chamado(FRASE, nivelUrgencia);
         chamados.add(novoChamado);
 
         System.out.println(novoChamado.getChamadaProblema() + " Chamada Cadastrada!");
@@ -86,8 +90,7 @@ public class Sistema_TI {
         if(chamados.size() > 0){
             int tamanhoArray = chamados.size();
 
-            System.out.println("Quantidade de objetos no array: " + tamanhoArray);
-            System.out.println("");
+            System.out.println("Quantidade de objetos no array: " + tamanhoArray + "\n");
 
             System.out.println("Digite o que ID que deseja alterar do array...(começa de zero tonto)");
             int update = input.nextInt();
