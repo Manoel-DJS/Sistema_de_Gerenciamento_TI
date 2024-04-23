@@ -58,7 +58,7 @@ public class Sistema_TI {
     // oto metodo
     private static void cadastrarChamada(){
 
-        System.out.println("Digite o serviço que deseja: ");
+        System.out.println("Digite o serviço que deseja: (//)");
         String FRASE = inputDel.next();
         // String nomeChamada = input.next();
 
@@ -69,6 +69,7 @@ public class Sistema_TI {
         chamados.add(novoChamado);
 
         System.out.println(novoChamado.getChamadaProblema() + " Chamada Cadastrada!");
+
         menuServico();
     }
 
@@ -95,8 +96,8 @@ public class Sistema_TI {
             System.out.println("Digite o que ID que deseja alterar do array...(começa de zero tonto)");
             int update = input.nextInt();
 
-            System.out.println("Digite a alteração do serviço: ");
-            String trocarChamado = input.next();
+            System.out.println("Digite a alteração do serviço: (//)");
+            String trocarChamado = inputDel.next();
 
             System.out.println("Digite o nivel de urgencia desse novo serviço: ");
             String trocarNivelChamado = input.next();
@@ -116,7 +117,8 @@ public class Sistema_TI {
             int tamanhoArray = chamados.size();
             System.out.println("Quantidade de objetos no array: " + tamanhoArray + "\n");
 
-            System.out.println("Digite a posição da chamada que deseja excluir do array...(começa de zero tonto)!: ");
+            System.out.println("[0],[1],[2], ...");
+            System.out.println("Digite a posição da chamada que deseja excluir do array...(começando de zero tonto)!: ");
             int remover = input.nextInt();
             chamados.remove(remover);
         } else{
@@ -124,7 +126,6 @@ public class Sistema_TI {
         }
         menuServico();
     }
-
 
     // https://www.youtube.com/watch?v=zVIowfVcT3M minuto 24
 }
